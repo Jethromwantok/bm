@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA SEASON STANDINGS</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color:aqua;
+        }
+        table{
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th{
+            background-color: #f4a261;
+            color: #FFFFFF;
+
+        }
+        tr:nth-child(even){
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+    <h2>NBA Season Standings</h2>
+    <table id="nbaTable">
+        <tr>
+            <th>Rank</th>
+            <th>Team</th>
+            <th>GP</th>
+            <th>W</th>
+            <th>L</th>
+            <th>PCT</th>
+            <th>GB</th>
+        </tr>
+    </table>
+    <script>
+        // NBA teams
+        const teams = ["Boston Celtics", "Milwaukee Bucks", "Philadelphia 76ers", "Miami Heat", "New York Knicks",
+        "Cleveland Cavaliers", "Brooklyn Nets", "Atlanta Hawks", "Toronto Raptors", "Chicago Bulls", "Indiana Pacers", "Washington Wizards",
+        "Orlando Magic", "Charlotte Hornets", "Detroit pistons", "Denver Nuggets", "Memphis Grizzlies", "Sacramento Kings", "Phoenix Suns",
+        "Golden State Warriors", "Los Angeles Lakers", "Los Angeles Clippers", "New Orleans Pelicans", "Minesota Timbewolves", "Okhlahoma City Thunder",
+        "Dallas Mavericks", "Portland Trail Blazers", "Utah Jazz", "San Antonio Spurs", "Houston Rockets"
+
+        ];
+        //Simulate random standings
+        let standings = teams.map(team=>{
+            let wins = Math.floor(Math.random()*60)+20;//Random wins(20-60)
+            let losses = 82 - wins;
+            let pct = (wins/82).toFixed(3);
+            return {team, wins, losses, pct};
+        });
+
+        //Sort teams by wins
+        standings.sort((a, b) => b.wins - a.wins);
+
+        //Calculate GB 
+        let maxWins=standings[0].wins;
+        standings = standings.map((team, index) => ({
+            rank: index + 1, ...team, 
+            gb: ((maxWins-team.wins)/2).toFixed(1)
+        }));
+
+        //insert rows into tables
+        let table = document.getElementById("nbaTable");
+        standings.forEach(team =>{
+            let row = table.insertRow();
+            row.innerHTML=`
+            <td>${team.rank}</td>
+            <td>${team.team}</td>
+            <td>82</td>
+            <td>${team.wins}</td>
+            <td>${team.losses}</td>
+            <td>${team.pct}</td>
+            <td>${team.gb}</td>`;
+        });
+    </script>
+<body>
+    
+</body>
+</html>

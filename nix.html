@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        background-color: bisque;
+        border-collapse: collapse;
+      }
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+      td:hover {
+        background-color: cadetblue;
+      }
+      tr {
+        border-bottom: 1px solid #000000; /* This is the border between rows */
+        border-collapse: collapse;
+      }
+      td {
+        padding-right: 20%;
+      }
+      body{
+        background-image: url(images/wallhaven-9mxq8x_1280x720.png);
+        background-size: cover;
+      }
+
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <table>
+      <!--Cell padding is the space between content and edges(Border)
+        Border is -->
+      <caption style="font-family: cursive; font-size: x-large">
+        NBA STANDINGS
+      </caption>
+      <tr>
+        <th style="width: 50px"></th>
+        <th>Team</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Pct</th>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>Cleveland Cavaliers</td>
+        <td>12</td>
+        <td>2</td>
+        <td>85.71</td>
+      </tr>
+
+      <tr>
+        <th>2</th>
+        <td>OKC Thunder</td>
+        <td>11</td>
+        <td>3</td>
+        <td>78.57</td>
+      </tr>
+<!--      <colgroup>
+        <col span="2" style="background-color: #d6eeee" />
+      </colgroup> -->
+      <tr>
+        <th>3</th>
+        <td>Boston Celtics</td>
+        <td>10</td>
+        <td>4</td>
+        <td>71.43</td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td>New York Knicks</td>
+        <td>9</td>
+        <td>5</td>
+        <td>64.28</td>
+      </tr>
+    </table>
+    <br />
+    <hr />
+    <form>
+      <label for="fname">First Name</label><br />
+      <input type="text" id="fname" name="fname" /><br />
+      <input type="text" placeholder="Enter team name" />
+      <input type="submit" value="Search" /><br />
+      <!--The for attribute of the <label> tag should be equal to the id attribute of the <input> element to bind them together.-->
+    </form><hr>
+    <form>
+      <input type="radio" id="html" name="fav_language" value="HTML" />
+      <label for="html">HTML</label><br />
+      <input type="radio" id="css" name="fav_language" value="CSS" />
+      <label for="css">CSS</label><br />
+      <input
+        type="radio"
+        id="javascript"
+        name="fav_language"
+        value="JavaScript"
+      />
+      <label for="javascript">JavaScript</label><br>
+
+      <img src="images/download (2).jpeg" height="200px" style="border:50px ;" ><br>
+      <video height="500px" controls>
+        <source src="Video/Canon   Chords Progression.mp4" type="video/mp4" style="border:50px ;">
+      </video>
+    </form>
+  </body>
+</html>

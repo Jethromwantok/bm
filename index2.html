@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 100%;
+        }
+        table, th, td{
+            border-bottom: 10px white;
+            border-collapse:separate;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+        }
+        th, td {
+            background-color: burlywood;
+            padding-right: 50px;
+        }
+        td:nth-child(even){
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!--Cell padding is the space between content and edges(Border)
+        Border is -->
+        <caption style="font-family: cursive; font-size: x-large;" > NBA STANDINGS</caption>
+        <tr>
+            <th style="width: 50px;"></th>
+            <th colspan="2">Team</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Pct</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>Cleveland</td>
+            <td> Cavaliers</td>
+            <td>12</td>
+            <td>2</td>
+            <td>85.71</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>OKC</td>
+            <td>Thunder</td>
+            <td>11</td>
+            <td>3</td>
+            <td>78.57</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Boston</td>
+            <td>Celtics</td>
+            <td>10</td>
+            <td>4</td>
+            <td>71.43</td>
+        </tr>
+        <tr><th>4</th>
+            <td>New York</td>
+            <td>Knicks</td>
+            <td>9</td>
+            <td>5</td>
+            <td>64.28</td>
+        </tr>
+    </table>
+</body>
+</html>
