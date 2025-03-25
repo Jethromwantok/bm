@@ -1,28 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Barriecito&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
-*{
-    border: 0;
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Barriecito&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+* {
+  border: 0;
+  margin: 0;
 }
-h1{
-    font-size: 80px;
-}
-
-.one{
-    font-family: "Dancing Script", cursive;
+h1 {
+  font-size: 50px;
 }
 
-.two{
-    font-family: "EB Garamond", serif;
+.one {
+  font-family: "Dancing Script", cursive;
 }
 
-.three{
-    font-family: "Albert Sans", sans-serif;
+.two {
+  font-family: "EB Garamond", serif;
 }
 
-.four{
-    font-family: "Barriecito", cursive;
+.three {
+  font-family: "Albert Sans", sans-serif;
 }
 
-.five{
-    font-family: "EB Garamond", serif;
+.four {
+  font-family: "Barriecito", cursive;
+}
+
+.five {
+  font-family: "EB Garamond", serif;
+}
+
+p{
+    font-size: 50px;
+    /* font-family: "Dancing Script", cursive; */
 }
