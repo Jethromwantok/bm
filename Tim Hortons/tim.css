@@ -152,6 +152,7 @@ main{
         }
         img{
             margin-top: -40px;
+            animation: float 6s ease-in-out infinite;
         }
     }
 
