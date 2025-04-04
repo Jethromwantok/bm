@@ -1,3 +1,9 @@
+@font-face
+{
+    font-family: 'sofia_pro';
+    src: url(./fonts/Sofia\ Pro\ Regular\ Az.otf) format('truetype');
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +12,7 @@
     color: rgb(63, 32, 33);
 
 }
+
 
 header{
     background-color:rgb(200, 16, 46) ;
@@ -100,6 +107,7 @@ header{
 }
 
 main{
+    /* margin-top: 4.9em; */
     height: fit-content;
     width: 100%;
     display: flex;
@@ -159,3 +167,245 @@ main{
     
 }
 
+    .content{
+    background-color: rgb(249, 249, 249);
+    width: 100%;
+    height: fit-content;
+    display: block;
+    justify-content: center;
+
+    .row-1{
+        width: 100%;
+        height : 28em;
+        display: flex;
+        /* margin: 0 auto; */
+        justify-content: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+
+
+        .col-1{
+
+            background-color: red;
+            margin-right: 8px;
+            margin-top: 0.5em;
+            
+
+
+        
+        }
+
+        
+        .col-2{
+
+            background-color: burlywood;
+            margin-left: 8px;
+            margin-top: 0.5em;
+
+
+        }
+        
+    }
+
+    .row-2{
+        width: 100%;
+        height : 28em;
+        display: flex;
+        /* margin: 0 auto; */
+        justify-content: center;
+        margin-bottom: 1em;
+
+        .col-1{
+
+            background-color: red;
+            margin-right: 8px;
+
+
+
+        
+        }
+        .col-2{
+
+            background-color: burlywood;
+            margin-left: 8px;
+
+
+        
+        
+        }
+        
+    }
+
+    .row-3{
+        width: 100%;
+        height : 28em;
+        display: flex;
+        /* margin: 0 auto; */
+        justify-content: center;
+        margin-bottom: 1em;
+
+        .col-1{
+
+            background-color: red;
+            margin-right: 8px;
+
+
+        
+
+        
+        }
+        .col-2{
+
+            background-color: burlywood;
+            margin-left: 8px;
+
+
+        
+        
+        }
+        
+    }
+
+    .row-4{
+        width: 100%;
+        height : 28em;
+        display: flex;
+        /* margin: 0 auto; */
+        justify-content: center;
+        margin-bottom: 1em;
+        
+
+        .col-1{
+
+            background-color: red;
+            margin-right: 8px;
+
+
+        
+
+        
+        }
+        .col-2{
+
+            
+            margin-left: 8px;
+
+ 
+        
+        
+        }
+        
+    }
+}
+
+
+
+#tab{
+    width: 44%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    
+
+    img{
+        width: 100%;
+        height: 63%;
+
+    }
+
+    .tab-note{
+        height: 37%;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+  
+
+        .note{
+            width: 70%;
+            height: fit-content;
+            margin-left: 1em;
+            font-size: 12px;
+
+        }
+
+
+
+        .button-div{
+            margin-left: 30px;
+            height: 70%;
+            align-content: flex-end;
+            
+            
+            button{
+                background-color: rgb(200, 16, 46);
+                color: white;
+                font-weight: 700;
+                font-size: 18px;
+                border: none;
+                border-bottom: 30px;
+                padding: 10px 12px 10px 12px;
+                border-radius: 35px;
+
+            }
+        }
+
+    }
+
+
+
+}
+
+.not{
+    margin-top:3em ;
+    width: 100%;
+    background-color: sandybrown;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+
+    .sect{
+        height: 12em;
+        width: 92%;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+
+
+        .not-txt{
+            width: 95%;
+            height: 100%;
+            background-color: sienna;
+            vertical-align: center;
+            line-height: 2rem;
+        
+            h2{
+
+            
+                margin-top: 1em;
+                font-size: 35px;
+                font-weight: 50000;
+            }
+
+            p{
+                font-size: 18px;
+                margin-top: 1em;
+
+                a{
+                    color: rgb(200, 16, 46);
+                    text-decoration:none ;
+                }
+            }
+
+        }
+    }
+}
+
+.info{
+    height: 3000px;
+}
+
+ 
