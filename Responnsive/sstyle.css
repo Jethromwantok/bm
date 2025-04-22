@@ -1,0 +1,17 @@
+*{
+    border: none;
+    padding: none;
+}
+
+header{
+    height: 8em;
+    background-color: white;
+    color: green;
+
+    nav{
+        ul{
+            list-style: url(./IMG_2896.PNG);
+            list-style-image: ;
+        }
+    }
+}
