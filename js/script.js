@@ -161,3 +161,56 @@ function calcScore(name1,ca1, ca2, ca3, exam) {
 }
 
 calcScore(`Augustine`,15,16, 8, 45);
+
+
+//Another way of declaring functions
+
+let vision = (divine)=>{
+    console.log(`My vision is ${divine}`);
+}
+
+console.log(vision(`Great`));
+
+//Call Back Functions
+
+// function arith(value, value2, operator){
+//     console.log(`You want to do ${operator} using ${value} and ${value2}` );
+    
+// }
+
+// function comment(callback){
+//     const user = `jamike`;
+//     const him = `gij`
+//     const her = `hart`
+//     callback(user, her, him);
+// }
+
+// comment(arith);
+
+function state(lgInCommon) {
+    console.log(`The states in common are ${lgInCommon}`);
+}
+
+function country(stateInCommon) {
+    let give = `Lagos`;
+    stateInCommon(give);
+}
+
+country(state);
+
+
+
+function gradient(x,y,c) {
+    let m = (y-c)/x ;
+    return m;
+
+}
+
+function rateOfChange(old, now, nowMinold){
+    let difference = now - old;
+
+    return nowMinold(5,6,difference)
+}
+
+console.log(rateOfChange(5,7, gradient));
+ 
