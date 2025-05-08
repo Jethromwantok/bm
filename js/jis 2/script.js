@@ -56,7 +56,6 @@ function canPurchase(worth) {
 let affordable = teamWorth.filter(canPurchase);
 console.log(affordable);
 
-
 //Timeouts and Intervals
 
 //Timeout is used to delay the execution of a piece of code
@@ -65,11 +64,9 @@ console.log(affordable);
 
 //   setTimeout(() => {
 //     console.log(`Damn! I'm too late`);
-    
-    
+
 //   }, 3000);
-  
-  
+
 //}, 3000);
 
 //Interval is used to run a line/block of code repeatedly after a set amount of time
@@ -77,45 +74,49 @@ console.log(affordable);
 
 // let intreg = setInterval(() => {
 //   console.log(counter++);
-  
+
 // }, 500);
 
 // setTimeout(()=>{
 //   clearInterval(intreg);
-  
+
 //   setTimeout(() => {
 //     console.log(`Ìnterval terminated`);
-    
+
 //   }, 500);
 // },20000)
 
 //DOM Document object Model
 
-console.log(document.getElementById('hungre'));//This is to target an HTML element
+console.log(document.getElementById("hungre")); //This is to target an HTML element
 
 //innerhtml is used to change things in the html file
 // document.getElementById('hungre').innerHTML =  'ÈVEN MORE'
 
 //Learn even more ways to target html elements
 
-
 //Events
 //A. click event
 
-let myH1 = document.getElementById('hungre');
+let myH1 = document.getElementById("hungre");
 let txtchange = function changeTxt() {
-  
   myH1.innerHTML = `Bonjour, Monsieur`;
-
-}
+};
 //There are 3 ways
 
 //i. Use the onclick attribute in the HTML file under the particular element and set value as the function name
 
-//ii. 
+//ii.
 myH1.onclick = txtchange;
 
 //iii. Adding eventlistener
 
-myH1.addEventListener('click', txtchange)
+myH1.addEventListener("click", txtchange);
 
+let btn1 = document.querySelector(".btn1");
+
+function changeColor() {
+  myH1.style.color = "blue";
+}
+
+btn1.addEventListener("dblclick", changeColor); //The btn1 in front makes sure to target just the btn1 class
