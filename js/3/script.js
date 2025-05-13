@@ -1,9 +1,6 @@
 let dtxt = document.getElementById("txt");
-
 let pbut = document.getElementById("bplus");
-
 let mbut = document.getElementById("bmin");
-
 let counter = 0;
 
 let bg = document.getElementById("body");
