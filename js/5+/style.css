@@ -1,0 +1,80 @@
+*{
+    
+    border: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+
+
+}
+
+main{
+    height: 100vh;
+    width: 100%;
+    background-color: indianred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    #calc{
+        width: 300px;
+        height: fit-content;
+        background: linear-gradient(lightgray, black);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        form{
+            width: 100%;
+
+        div{
+            height: 70px;
+            width: 95%;
+
+            margin: 8px;
+            display: flex;
+            gap: 13px;
+            
+
+            button{
+                
+                height: 100%;
+                width :24%;
+                border-radius: 200px;
+                background-color: lightgray;
+                
+                
+            }
+            #zbtn{
+                width: 50%;
+                padding-left: 15px;
+                text-align: left;
+
+            }
+            .top{
+                background-color: grey;
+            }
+
+            .operator{
+                background-color: orange;
+            }
+            
+        }
+        .inputArea{
+            margin-top: 30px;
+            height: 2em;
+            background-color: whitesmoke;
+        }
+        input{
+            height: 100%;
+            width: 100%;
+        }
+
+        .last{
+            margin-bottom: 20px;
+        }
+
+    }
+}
+}

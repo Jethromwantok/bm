@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <main>
+        <div id="calc">
+
+            <form action="#">
+
+            <div class="inputArea"> <input type="text" id="input"></div>
+            <div>
+                <button onclick="clearLog()" class="top">AC</button>
+                <button class="top">RT</button>
+                <button onclick="insertValue('^')" class="top">^</button>
+                <button onclick="insertValue('/')"class="operator">/</button>
+            </div>
+            <div><button onclick="insertValue('7')">7</button>
+                <button onclick="insertValue('8')">8</button>
+                <button onclick="insertValue('9')">9</button>
+                <button  onclick="insertValue('*')"class="operator">*</button></div>
+
+            <div><button onclick="insertValue('4')" >4</button>
+                <button onclick="insertValue('5')">5</button>
+                <button onclick="insertValue('6')">6</button>
+                <button class="operator">+</button></div>
+            <div><button onclick="insertValue('1')">1</button>
+                <button  onclick="insertValue('2')">2</button>
+                <button onclick="insertValue('3')">3</button>
+                <button  onclick="insertValue('-')"class="operator">-</button></div>
+            <div  onclick="insertValue('0')"class="last"><button id="zbtn">0</button>
+                <button  onclick="insertValue('.')">.</button>
+                <button class="operator">=</button></div>
+            </form>
+        </div>
+    </main>
+
+    
+    <p id="tip"></p>
+    <button id="him">this button</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
