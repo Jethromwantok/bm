@@ -23,14 +23,15 @@ submitBtn.addEventListener('click', (e)=>{
         if (driverName.value !== '' && driverage.value === '') {
             prompttxt.style.color='red';
             prompttxt.innerHTML = `No Age was entered`;
-            driverName.style.border = 'red';
+            driverage.style.border = '1px solid red';
             
         }else if(driverName.value === '' && driverage.value !== ''){
-            driverage.style.border = 'red';
+            driverName.style.border = '1px solid red';
             prompttxt.style.color='red';
             prompttxt.textContent = `No Name was entered`
         }else{
             prompttxt.textContent = `Driver ${driverName.value} has been registered`;
+            prompttxt.style.color='black';
         }
     }
 })
