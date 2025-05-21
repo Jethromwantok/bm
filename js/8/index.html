@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="head">
+        <h1><p id="welcomeMsg"></p></h1>
+        <p id="warning"></p>
+      </div>
+      <div class="body">
+        <div class="form" id="subjects">
+          <form action="">
+            <input
+              type="number"
+              class="score"
+              name=""
+              id="mathematics"
+              placeholder="Mathematics"
+            />
+            <input
+              type="number"
+              class="score"
+              name=""
+              id="english"
+              placeholder="English Language"
+            />
+            <input type="number"
+            class="score" name="" id="biology" placeholder="Biology" />
+            <input type="number"
+            class="score" name="" id="physics" placeholder="Physics" />
+            <input
+              type="number"
+              class="score"
+              name=""
+              id="chemistry"
+              placeholder="Chemistry"
+            />
+            <input
+              type="number"
+              class="score"
+              name=""
+              id="civic"
+              placeholder="Civic Education"
+            />
+            <input
+              type="number"
+              class="score"
+              name=""
+              id="marketing"
+              placeholder="Marketing"
+            />
+            <input
+              type="number"
+              class="score"
+              name=""
+              id="computer"
+              placeholder="Computer Science"
+            />
+            <input
+              type="number"
+              class="score"
+              name=""
+              id="economics"
+              placeholder="Economics"
+            />
+
+            <button type="submit" id="getGrades">Submit</button>
+          </form>
+        </div>
+
+        <div class="form" id="loginform">
+          <form action="">
+            <label for="namespace">Name:</label><br> 
+            <input type="text" id="namespace" placeholder="Minato Namikaze" /><br>
+
+            <label for="gender">Gender:</label>
+            <br />
+            <select name="" id="gender">
+              <option value="">Male</option>
+              <option value="">Female</option>
+            </select>
+            <br />
+            <button type="submit" id="login">Login</button>
+          </form>
+        </div>
+
+        <div class="form" id="grade">
+          <form action="">
+            <input type="text" name="" id="total" placeholder="Total Score" />
+            <input type="text" name="" id="gradeletter" placeholder="Grade" />
+            <input type="text" name="" id="remark" placeholder="Remark" />
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
