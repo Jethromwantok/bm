@@ -47,6 +47,14 @@ main {
           margin-bottom: 10px;
           width: 90%;
           border-radius: 7px;
+          
+          #scoreError{
+            color: red;
+          }
+          
+        }
+        #id{
+          color: black;
         }
 
         select {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StopWatch</title>
+    <title>Result Checker</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -15,6 +15,7 @@
       <div class="body">
         <div class="form" id="subjects">
           <form action="">
+            <p id="scoreError"></p>
             <input
               type="number"
               class="score"
@@ -91,9 +92,10 @@
 
         <div class="form" id="grade">
           <form action="">
-            <input type="text" name="" id="total" placeholder="Total Score" />
-            <input type="text" name="" id="gradeletter" placeholder="Grade" />
-            <input type="text" name="" id="remark" placeholder="Remark" />
+            <input type="text" name="" id="total" placeholder="Total Score" disabled/>
+            <input type="text" name="" id="average" placeholder="Average" disabled/>
+            <input type="text" name="" id="gradeletter" placeholder="Grade" disabled/>
+            <input type="text" name="" id="remark" placeholder="Remark" disabled/>
           </form>
         </div>
 

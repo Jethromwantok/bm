@@ -17,11 +17,14 @@ let computer = document.getElementById("computer");
 let economics = document.getElementById("economics");
 let getGrades = document.getElementById("getGrades");
 let total = document.getElementById("total");
+let averageprint = document.getElementById("average");
 let gradeletter = document.getElementById("gradeletter");
 let remark = document.getElementById("remark");
 let warningmsg = document.getElementById('warning');
-let scores = document.getElementsByClassName('score');
+// let scores = document.getElementsByClassName('score');
+let totalScore;
 let average;
+let scoreError = document.getElementById("scoreError")
 
 login.addEventListener("click", (e) => {
   msg.innerHTML = "";
@@ -42,50 +45,116 @@ login.addEventListener("click", (e) => {
       loginform.style.display = "none";
       subjects.style.display = "block";
       grade.style.display = "block";
-      total.setAttribute("disabled", "true");
-      remark.setAttribute("disabled", "true");
-      gradeletter.setAttribute("disabled", "true");
+      // total.setAttribute("disabled", "true");
+      // averageprint.setAttribute("disabled", "true");
+      // remark.setAttribute("disabled", "true");
+      // gradeletter.setAttribute("disabled", "true");
 
       getGrades.addEventListener("click", (e) => {
         e.preventDefault();
 
-        if (scores > 100 || scores < 0) {
+        
+          if (english.value == '' || english.value > 100) {
+            english.style.border = 'solid 1px red';
+          }else{
+            english.style.border = 'solid 1px green';
+          }
 
-            warningmsg.innerHTML = `A wrong score was entered`
-            
-        }
+          if (mathematics.value == '' || mathematics.value > 100 ||) {
+            mathematics.style.border = 'solid 1px red';
+          }else{
+            mathematics.style.border = 'solid 1px green';
+          }
+          if (marketing.value == '' || marketing.value > 100) {
+            marketing.style.border = 'solid 1px red';
+          }else{
+            marketing.style.border = 'solid 1px green';
+          }
+          if (biology.value == '' || biology.value > 100) {
+            biology.style.border = 'solid 1px red';
+          }else{
+            biology.style.border = 'solid 1px green';
+          }
+          if (economics.value == '' || economics.value > 100) {
+            economics.style.border = 'solid 1px red';
+          }else{
+            economics.style.border = 'solid 1px green';
+          }
+          if (chemistry.value == '' || chemistry.value > 100) {
+            chemistry.style.border = 'solid 1px red';
+          }else{
+            chemistry.style.border = 'solid 1px green';
+          }
+          if (civic.value == '' || civic.value > 100) {
+            civic.style.border = 'solid 1px red';
+          }else{
+            civic.style.border = 'solid 1px green';
+          }
+          if (computer.value == '' || computer.value > 100) {
+            computer.style.border = 'solid 1px red';
+          }else{
+            computer.style.border = 'solid 1px green';
+          }
+          if (physics.value == '' || physics.value > 100) {
+            physics.style.border = 'solid 1px red';
+          }else{
+            physics.style.border = 'solid 1px green';
+          }
 
-        total.innerHTML= english.value + mathematics.value+physics.value+chemistry.value+biology.value+economics.value+computer.value+civic.value+marketing.value
+           scoreError.innerHTML = `One or more of the score fields have been left blank`;
+          total.value = '';
+          averageprint.value = '';
+          remark.value = '';
+          gradeletter.value = '';
+        
 
-        average = (total.innerHTML/9);
+
+        if (english.value == '' || mathematics.value =='' ||  physics.value == '' || chemistry.value == '' || civic.value == '' || marketing.value == '' || economics.value == '' || computer.value == '' || biology.value == '') {
+
+          scoreError.innerHTML = `One or more of the score fields have been left blank`;
+          total.value = '';
+          averageprint.value = '';
+          remark.value = '';
+          gradeletter.value = '';
+
+
+        }else{totalScore = Number(english.value) + Number(mathematics.value)+ Number(physics.value)+ Number(chemistry.value)+Number(biology.value)+Number(economics.value)+Number(computer.value)+Number(civic.value)+Number(marketing.value);
+
+        console.log(totalScore);
+        total.value = `Total :${totalScore}`
+        
+
+        average = (totalScore/9);
+        console.log(average);
+        averageprint.value = `Average :${average}` ;
+        
 
         if (average >= 70) {
-            gradeletter.innerHTML = 'A';
-            remark.innerHTML = `Excellent`;
+            gradeletter.value = `Grade : A`;
+            remark.value = `Excellent`;
             
-        } else if (average < 70 && total.innerHTML >= 60) {
-            gradeletter.innerHTML = 'B';
-            remark.innerHTML = `Very Good Job`;
+        } else if (average < 70 && average >= 60) {
+            gradeletter.value = 'Grade : B';
+            remark.value = `Very Good Job`;
             
-        } else if (average < 60 && total.innerHTML >= 50) {
-            gradeletter.innerHTML = 'C';
-            remark.innerHTML = `Good Job`;
+        } else if (average < 60 && average >= 50) {
+            gradeletter.value = 'Grade : C';
+            remark.value = `Good Job`;
             
-        } else if (average < 50 && total.innerHTML >= 45) {
-            gradeletter.innerHTML = 'D';
-            remark.innerHTML = `Fair`;
+        } else if (average < 50 && average >= 45) {
+            gradeletter.value = 'Grade : D';
+            remark.value = `Fair`;
             
-        } else if (average < 45 && total.innerHTML >= 40) {
-            gradeletter.innerHTML = 'E';
-            remark.innerHTML = `Pass`;
+        } else if (average < 45 && average >= 40) {
+            gradeletter.value = 'Grade : E';
+            remark.value = `Pass`;
             
         } else if (average < 40 ) {
-            gradeletter.innerHTML = 'F';
-            remark.innerHTML = `Fail`;
+            gradeletter.value = 'Grade : F';
+            remark.value = `Fail`;
             
         }  
-
-
+      }
       });
     }, 1000);
   }
