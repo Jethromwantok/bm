@@ -60,7 +60,7 @@ login.addEventListener("click", (e) => {
             english.style.border = 'solid 1px green';
           }
 
-          if (mathematics.value == '' || mathematics.value > 100 ||) {
+          if (mathematics.value == '' || mathematics.value > 100) {
             mathematics.style.border = 'solid 1px red';
           }else{
             mathematics.style.border = 'solid 1px green';
