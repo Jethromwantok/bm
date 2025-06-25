@@ -1,0 +1,9 @@
+name
+altSpellings
+capital
+continents
+currencies
+subregion
+population
+languages
+flags

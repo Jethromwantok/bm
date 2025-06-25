@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function getAllCurrencies(callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://pro-api.coingecko.com/api/v3/simple/supported_vs_currencies', true);
+  xhr.setRequestHeader('x-cg-pro-api-key', 'CG-ySy72HLBeoweSWY3ieYmnjAm');
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      callback(JSON.parse(xhr.responseText).join(','));
+    } else {
+      console.error('Currencies error', xhr.status);
+    }
+  };
+  xhr.onerror = () => console.error('Network error on currencies');
+  xhr.send();
+}
+
+function fetchPrices(ids, vsCurrencies) {
+  const xhr = new XMLHttpRequest();
+  const params = `ids=${encodeURIComponent(ids)}&vs_currencies=${encodeURIComponent(vsCurrencies)}`;
+  const url = `https://pro-api.coingecko.com/api/v3/simple/price?${params}`;
+  xhr.open('GET', url, true);
+  xhr.setRequestHeader('x-cg-pro-api-key', 'CG-ySy72HLBeoweSWY3ieYmnjAm');
+  
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      console.log('Prices:', JSON.parse(xhr.responseText));
+    } else {
+      console.error('Prices error', xhr.status, xhr.responseText);
+    }
+  };
+  
+  xhr.onerror = () => console.error('Network error on prices');
+  xhr.send();
+}
+
+// Example: fetch market prices for BTC and ETH
+getAllCurrencies((vs) => {
+  fetchPrices('bitcoin,ethereum', vs);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+
+}
+
+header{
+    background-color: rgb(187, 186, 186);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    height: 3em;
+    width: 	100%;
+    display: flex;
+    justify-content: center;
+
+    img{
+        max-height: 100%;
+        width: auto;
+    }
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+
+    .container{
+        width: 60%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit content;
+
+        #coin-search{
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            height: 40px;
+            font-size: 25px;
+            padding: 7px;
+            border-radius: 5px;
+
+        }
+
+        svg{
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+    }
+}
