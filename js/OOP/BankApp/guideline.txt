@@ -1,0 +1,15 @@
+main class takes
+-name
+-amount
+
+  methods
+  -greet
+  -balance(client)
+  -transaction
+
+CHILDREN
+
+User
+-account number
+
+Bank
