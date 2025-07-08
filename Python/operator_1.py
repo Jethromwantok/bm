@@ -46,3 +46,20 @@ Operators
 3 Comparison operator; <,>,<=,>=,!=,==,===
 4 Logical Operator; 'or', 'and', 
 """
+
+i = 4
+j = 12
+i += 5
+
+j%3
+
+print(i)
+print(j%3)
+
+e = 5
+f = 6
+
+if e>f:
+    print("Yes")
+else:
+    print("No now")
