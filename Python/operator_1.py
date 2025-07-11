@@ -1,3 +1,4 @@
+import tkinter as tk
 name = "John Doe"
 print(name);
 #Comment
@@ -42,9 +43,10 @@ print(type(i1))
 """
 Operators
 1 Arithmetic Operators; +,-,?,*,**,%,//
-2 Assignment Operator; +=, =, -=, *= **=, /=, %=, //=
-3 Comparison operator; <,>,<=,>=,!=,==,===
-4 Logical Operator; 'or', 'and', 
+2 Assignment Operators; +=, =, -=, *= **=, /=, %=, //=
+3 Comparison Operators; <,>,<=,>=,!=,==,===
+4 Logical Operators; 'or', 'and', 
+5 Membership Operators
 """
 
 i = 4
@@ -63,3 +65,21 @@ if e>f:
     print("Yes")
 else:
     print("No now")
+
+# Logical Operators
+
+k = 5
+l = 7
+m = 9
+if k < l or m < l :
+    print("Yes")
+else:
+    print("No")
+
+if k < l and m > l:
+    print("This is true")
+else :
+    print("This is false ")
+
+
+
