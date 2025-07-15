@@ -1,28 +1,26 @@
 function fetchCryptoPrice() {
   setInterval(() => {
-    
-    
     let cryptoInput = document
-    .getElementById("cryptoInput")
-    .value.trim()
-    .toLowerCase();
+      .getElementById("cryptoInput")
+      .value.trim()
+      .toLowerCase();
     let resultDiv = document.getElementById("result");
-    
+
     if (!cryptoInput) {
       resultDiv.innerHTML =
-      '<p class="error">Please enter a cryptocurrency name or symbol.</p>';
+        '<p class="error">Please enter a cryptocurrency name or symbol.</p>';
       return;
     }
-    
+
     resultDiv.innerHTML = "<p>Loading...</p>";
-    
+
     let xhr = new XMLHttpRequest();
     xhr.open(
-    "GET",
-    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${cryptoInput}`,
-    true
-  );
-}, 1000);
+      "GET",
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${cryptoInput}`,
+      true
+    );
+  }, 1000);
 
   xhr.onload = function () {
     if (xhr.status >= 200 && xhr.status < 300 && xhr.readyState === 4) {
@@ -54,8 +52,7 @@ function fetchCryptoPrice() {
                         <p>Market Cap: ${marketCap}</p>
                         <p>24h Change: <span class="${priceChangeClass}">${priceChange}%</span></p>
                     `;
-                    console.log("Data fetched successfully:", data);
-                    
+      console.log("Data fetched successfully:", data);
     } else {
       resultDiv.innerHTML =
         '<p class="error">Error fetching data. Please try again later.</p>';

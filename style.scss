@@ -1,35 +1,33 @@
 /*Selectors */
 
 /* General */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*Element/Tag selector*/
-h1{
-    color: red;
-    font-size: 50px;
-    text-align: center;
+h1 {
+  color: red;
+  font-size: 50px;
+  text-align: center;
 }
 
 /*Class Selector*/
-.highlight{
-    color: blue;
+.highlight {
+  color: blue;
 }
 
 /*Id selector*/
-#myId{
-    color: green;
+#myId {
+  color: green;
 }
 
 /*Decendant selector*/
-p #myId{
-    color: yellow;
-    font-size: 20px;
+p #myId {
+  color: yellow;
+  font-size: 20px;
 }
 
 /*Group Selector*/

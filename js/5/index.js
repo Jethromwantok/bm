@@ -1,6 +1,6 @@
-let seven = document.getElementById('7btn')
-let input = document.getElementById('inputArea')
+let seven = document.getElementById("7btn");
+let input = document.getElementById("inputArea");
 
-seven.addEventListener('click',()=>{
-    input.innerHTML = `7`;
-})
+seven.addEventListener("click", () => {
+  input.innerHTML = `7`;
+});

@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do List</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
+      <div class="todo">
+        <h3>To-Do List</h3>
 
-        <div class="todo">
-
-            <h3>To-Do List</h3>
-
-            <div class="heading">
-                
-                <input type="text" placeholder="Enter your next task" id="item">
-                <button id="addBtn">+ ADD</button>
-            </div>
-            <div class="list">
-
-                
-                <p id="alert"></p>
-                <p id="list"></p>
-            </div>
+        <div class="heading">
+          <input type="text" placeholder="Enter your next task" id="item" />
+          <button id="addBtn">+ ADD</button>
         </div>
-
+        <div class="list">
+          <p id="alert"></p>
+          <p id="list"></p>
+        </div>
+      </div>
     </main>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

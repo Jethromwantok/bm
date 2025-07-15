@@ -10,12 +10,11 @@ let minutecounter = 0;
 let hourcounter = 0;
 
 start.onclick = function startTime() {
+  // if (start.innerHTML = `Resume`) {
+  //     start.innerHTML = `Start`;
 
-    // if (start.innerHTML = `Resume`) {
-    //     start.innerHTML = `Start`;
-        
-    // }
-    start.setAttribute('disabled', 'true')
+  // }
+  start.setAttribute("disabled", "true");
   let myInterval = setInterval(() => {
     secondcounter++;
     seconds.innerHTML = secondcounter;
@@ -41,16 +40,15 @@ start.onclick = function startTime() {
     seconds.innerHTML = "00";
     minutes.innerHTML = "00";
     hours.innerHTML = "00";
-    start.removeAttribute('disabled',);
-    start.innerHTML=`Start`;
+    start.removeAttribute("disabled");
+    start.innerHTML = `Start`;
 
     clearInterval(myInterval);
   };
-  
+
   stops.onclick = function stopTime() {
     clearInterval(myInterval);
     start.innerHTML = `Resume`;
-    start.removeAttribute('disabled');
-
-  }
+    start.removeAttribute("disabled");
+  };
 };

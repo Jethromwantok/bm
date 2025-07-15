@@ -39,7 +39,7 @@ add.addEventListener("click", (e) => {
     editBtn.addEventListener("click", (e) => {
       e.preventDefault();
       div1.setAttribute("contentEditable", "true");
-      addEventListener('')
+      addEventListener("");
     });
 
     deleteBtn.addEventListener("click", (e) => {
@@ -47,8 +47,8 @@ add.addEventListener("click", (e) => {
       li.remove();
     });
 
-    div1.removeAttribute('contentEditable')
+    div1.removeAttribute("contentEditable");
 
-    todo.value = '';
+    todo.value = "";
   }
 });

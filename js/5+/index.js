@@ -1,24 +1,19 @@
-let input = document.getElementById('input');
+let input = document.getElementById("input");
 
 function insertValue(value) {
-    input.value += value;
+  input.value += value;
 }
 
 function clearLog() {
-    input.value='';
-    
+  input.value = "";
 }
 
 function squareRoot() {
-    input.value = Math.sqrt(input.value);
-    
+  input.value = Math.sqrt(input.value);
 }
 
 function equalTo() {
-    input.value = eval(input.value) ;
-    
+  input.value = eval(input.value);
 }
 
-function name(params) {
-    
-}
+function name(params) {}

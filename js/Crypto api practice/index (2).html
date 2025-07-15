@@ -1,210 +1,246 @@
 <script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
+  var gk_isXlsx = false;
+  var gk_xlsxFileLookup = {};
+  var gk_fileData = {};
+  function filledCell(cell) {
+    return cell !== "" && cell != null;
+  }
+  function loadFileData(filename) {
+    if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+      try {
+        var workbook = XLSX.read(gk_fileData[filename], { type: "base64" });
+        var firstSheetName = workbook.SheetNames[0];
+        var worksheet = workbook.Sheets[firstSheetName];
 
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
+        // Convert sheet to JSON to filter blank rows
+        var jsonData = XLSX.utils.sheet_to_json(worksheet, {
+          header: 1,
+          blankrows: false,
+          defval: "",
+        });
+        // Filter out blank rows (rows where all cells are empty, null, or undefined)
+        var filteredData = jsonData.filter((row) => row.some(filledCell));
 
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
+        // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+        var headerRowIndex = filteredData.findIndex(
+          (row, index) =>
+            row.filter(filledCell).length >=
+            filteredData[index + 1]?.filter(filledCell).length
+        );
+        // Fallback
+        if (headerRowIndex === -1 || headerRowIndex > 25) {
+          headerRowIndex = 0;
+        }
 
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+        // Convert filtered JSON back to CSV
+        var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+        csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+        return csv;
+      } catch (e) {
+        console.error(e);
+        return "";
+      }
+    }
+    return gk_fileData[filename] || "";
+  }
+</script>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cryptocurrency Price Tracker</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 600px;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .search-bar {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #6200ea;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #3700b3;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+      }
+      .result p {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+      .error {
+        color: #d32f2f;
+        font-weight: bold;
+      }
+      .positive {
+        color: #2e7d32;
+      }
+      .negative {
+        color: #d32f2f;
+      }
+      footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+      }
+      footer a {
+        color: #6200ea;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
         .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 600px;
-            text-align: center;
+          width: 95%;
+          padding: 15px;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .search-bar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            flex: 1;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            outline: none;
-        }
+        input[type="text"],
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #6200ea;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+          font-size: 14px;
         }
-        button:hover {
-            background-color: #3700b3;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 4px;
-            background-color: #f9f9f9;
-        }
-        .result p {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        .error {
-            color: #d32f2f;
-            font-weight: bold;
-        }
-        .positive {
-            color: #2e7d32;
-        }
-        .negative {
-            color: #d32f2f;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-        footer a {
-            color: #6200ea;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-                padding: 15px;
-            }
-            input[type="text"], button {
-                font-size: 14px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Cryptocurrency Price Tracker</h1>
-        <div class="search-bar">
-            <input type="text" id="cryptoInput" placeholder="Enter cryptocurrency (e.g., Bitcoin, BTC)">
-            <button onclick="fetchCryptoPrice()">Search</button>
-        </div>
-        <div class="result" id="result"></div>
+      <h1>Cryptocurrency Price Tracker</h1>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="cryptoInput"
+          placeholder="Enter cryptocurrency (e.g., Bitcoin, BTC)"
+        />
+        <button onclick="fetchCryptoPrice()">Search</button>
+      </div>
+      <div class="result" id="result"></div>
     </div>
     <footer>
-        <p>Powered by <a href="https://www.coingecko.com" target="_blank">CoinGecko API</a></p>
+      <p>
+        Powered by
+        <a href="https://www.coingecko.com" target="_blank">CoinGecko API</a>
+      </p>
     </footer>
 
     <script>
-        function fetchCryptoPrice() {
-            const cryptoInput = document.getElementById('cryptoInput').value.trim().toLowerCase();
-            const resultDiv = document.getElementById('result');
+      function fetchCryptoPrice() {
+        const cryptoInput = document
+          .getElementById("cryptoInput")
+          .value.trim()
+          .toLowerCase();
+        const resultDiv = document.getElementById("result");
 
-            if (!cryptoInput) {
-                resultDiv.innerHTML = '<p class="error">Please enter a cryptocurrency name or symbol.</p>';
-                return;
+        if (!cryptoInput) {
+          resultDiv.innerHTML =
+            '<p class="error">Please enter a cryptocurrency name or symbol.</p>';
+          return;
+        }
+
+        resultDiv.innerHTML = "<p>Loading...</p>";
+
+        const xhr = new XMLHttpRequest();
+        xhr.open(
+          "GET",
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${cryptoInput}`,
+          true
+        );
+
+        xhr.onload = function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            const data = JSON.parse(xhr.responseText);
+
+            if (data.length === 0) {
+              resultDiv.innerHTML =
+                '<p class="error">Cryptocurrency not found. Try another name or symbol (e.g., Bitcoin, BTC).</p>';
+              return;
             }
 
-            resultDiv.innerHTML = '<p>Loading...</p>';
+            const crypto = data[0];
+            const price = crypto.current_price.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            });
+            const marketCap = crypto.market_cap.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            });
+            const priceChange = crypto.price_change_percentage_24h.toFixed(2);
+            const priceChangeClass = priceChange >= 0 ? "positive" : "negative";
 
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${cryptoInput}`, true);
-
-            xhr.onload = function() {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    const data = JSON.parse(xhr.responseText);
-
-                    if (data.length === 0) {
-                        resultDiv.innerHTML = '<p class="error">Cryptocurrency not found. Try another name or symbol (e.g., Bitcoin, BTC).</p>';
-                        return;
-                    }
-
-                    const crypto = data[0];
-                    const price = crypto.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                    const marketCap = crypto.market_cap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                    const priceChange = crypto.price_change_percentage_24h.toFixed(2);
-                    const priceChangeClass = priceChange >= 0 ? 'positive' : 'negative';
-
-                    resultDiv.innerHTML = `
-                        <p><strong>${crypto.name} (${crypto.symbol.toUpperCase()})</strong></p>
+            resultDiv.innerHTML = `
+                        <p><strong>${
+                          crypto.name
+                        } (${crypto.symbol.toUpperCase()})</strong></p>
                         <p>Price: ${price}</p>
                         <p>Market Cap: ${marketCap}</p>
                         <p>24h Change: <span class="${priceChangeClass}">${priceChange}%</span></p>
                     `;
-                } else {
-                    resultDiv.innerHTML = '<p class="error">Error fetching data. Please try again later.</p>';
-                    console.error('Request failed with status:', xhr.status);
-                }
-            };
+          } else {
+            resultDiv.innerHTML =
+              '<p class="error">Error fetching data. Please try again later.</p>';
+            console.error("Request failed with status:", xhr.status);
+          }
+        };
 
-            xhr.onerror = function() {
-                resultDiv.innerHTML = '<p class="error">Error fetching data. Please try again later.</p>';
-                console.error('Network error');
-            };
+        xhr.onerror = function () {
+          resultDiv.innerHTML =
+            '<p class="error">Error fetching data. Please try again later.</p>';
+          console.error("Network error");
+        };
 
-            xhr.send();
-        }
+        xhr.send();
+      }
 
-        // Allow pressing Enter to trigger search
-        document.getElementById('cryptoInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                fetchCryptoPrice();
-            }
+      // Allow pressing Enter to trigger search
+      document
+        .getElementById("cryptoInput")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            fetchCryptoPrice();
+          }
         });
     </script>
-</body>
+  </body>
 </html>

@@ -1,10 +1,136 @@
-*{
-    margin: 0;
-    padding: 0;
-
+* {
+  margin: 0;
+  padding: 0;
 }
 
-main{
+main {
+  width: 100%;
+  height: fit-content;
+  background-color: #abcdef;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  div {
+    width: 20%;
+    height: 15em;
+    margin-top: 1em;
+    border-radius: 25px;
+  }
+
+  .one {
+    background-color: #f00;
+  }
+
+  .two {
+    background-color: #0f0;
+  }
+
+  .three {
+    background-color: #00f;
+  }
+
+  .four {
+    background-color: #ff0;
+  }
+
+  .five {
+    background-color: #0ff;
+  }
+
+  .six {
+    background-color: #f0f;
+  }
+
+  .seven {
+    background-color: #f80;
+  }
+
+  .eight {
+    background-color: #08f;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main {
+    div {
+      width: 98%;
+      height: 20em;
+      margin-top: 1em;
+    }
+
+    .one {
+      background: url(./IMG_2896.PNG);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .two {
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  main {
+    justify-content: space-around;
+
+    div {
+      width: 48%;
+      height: 20em;
+      margin-top: 1em;
+    }
+    .one {
+      background-color: #f00;
+      /* background-image: none; */
+    }
+
+    .two {
+      width: 98%;
+      background: url(./IMG_2896.PNG);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  main {
+    .one,
+    .two,
+    .three,
+    .five,
+    .six,
+    .seven {
+      width: 32%;
+      height: 20em;
+      margin-top: 1em;
+    }
+
+    .one {
+      background: red;
+    }
+    .two {
+      background: green;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .four,
+    .eight {
+      width: 96%;
+      height: 20em;
+      margin-top: 1em;
+      background: url(./IMG_2896.PNG);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  main {
     width: 100%;
     height: fit-content;
     background-color: #abcdef;
@@ -12,180 +138,43 @@ main{
     flex-wrap: wrap;
     justify-content: center;
 
-    div{
-        width: 20%;
-        height: 15em;
-        margin-top: 1em;
-        border-radius: 25px;
-
+    div {
+      width: 20%;
+      height: 15em;
+      margin-top: 1em;
+      border-radius: 25px;
     }
 
-    .one{
-        background-color: #f00;
-
-
+    .one {
+      background-color: #f00;
     }
 
-    .two{
-        background-color: #0f0;
-    }
-    
-    .three{
-        background-color: #00f;
+    .two {
+      background-color: #0f0;
     }
 
-    .four{
-        background-color: #ff0;
+    .three {
+      background-color: #00f;
     }
 
-    .five{
-        background-color: #0ff;
+    .four {
+      background-color: #ff0;
     }
 
-    .six{
-        background-color: #f0f;
+    .five {
+      background-color: #0ff;
     }
 
-    .seven{
-        background-color: #f80;
+    .six {
+      background-color: #f0f;
     }
 
-    .eight{
-        background-color: #08f;
+    .seven {
+      background-color: #f80;
     }
-}
 
-@media only screen and (max-width : 500px) {
-    main{
-        div{
-            width: 98%;
-            height: 20em;
-            margin-top: 1em;
-        }
-
-        .one{
-            background: url(./IMG_2896.PNG);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        .two{
-
-        }
-
-
+    .eight {
+      background-color: #08f;
     }
-    
-}
-
-@media only screen and (min-width :500px ){
-    main{
-
-        justify-content: space-around;
-
-        div{
-            width: 48%;
-            height: 20em;
-            margin-top: 1em;
-        }
-        .one{
-            background-color: #f00;
-            /* background-image: none; */
-
-        }
-
-        .two{
-            width: 98%;
-            background: url(./IMG_2896.PNG);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-
-
-        }
-    }
-    
-
-
-}
-
-@media only screen and (min-width : 700px){
-    main{
-        
-        .one, .two, .three, .five, .six, .seven{
-            width: 32%;
-            height: 20em;
-            margin-top: 1em;
-        }
-
-        .one{
-            background: red;
-        }
-        .two{
-            background: green;
-            background-position: center;
-            background-size: cover;
-        }
-
-        .four, .eight{
-            width: 96%;
-            height: 20em;
-            margin-top: 1em;
-            background: url(./IMG_2896.PNG);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-    }
-}
-
-@media only screen and (min-width : 800px){
-    main{
-        width: 100%;
-        height: fit-content;
-        background-color: #abcdef;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    
-        div{
-            width: 20%;
-            height: 15em;
-            margin-top: 1em;
-            border-radius: 25px;
-    
-        }
-    
-        .one{
-            background-color: #f00;
-        }
-    
-        .two{
-            background-color: #0f0;
-        }
-        
-        .three{
-            background-color: #00f;
-        }
-    
-        .four{
-            background-color: #ff0;
-        }
-    
-        .five{
-            background-color: #0ff;
-        }
-    
-        .six{
-            background-color: #f0f;
-        }
-    
-        .seven{
-            background-color: #f80;
-        }
-    
-        .eight{
-            background-color: #08f;
-        }
-    }
+  }
 }

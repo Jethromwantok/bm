@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text To Speech & Reminder</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-        <form id="reminder-form">
-            <input type="text" id="reminder-text" placeholder="Reminder" required>
-            <input type="date" id="reminder-date" required>
-            <input type="time" id="reminder-time" required>
-            <button type="submit">Add Reminder</button>
-        </form>
-        <section id="reminders-list"></section>
-        <form action="">
-            <input type="text" id="text-input" placeholder="Enter text here" required>
-            <select id="voice-select">
-                <option value="David">David</option>
-                <option value="Mary">Mary</option>
-            </select>
-            <button type="submit" id="speak-button">Speak</button>
-        </form>
+      <form id="reminder-form">
+        <input type="text" id="reminder-text" placeholder="Reminder" required />
+        <input type="date" id="reminder-date" required />
+        <input type="time" id="reminder-time" required />
+        <button type="submit">Add Reminder</button>
+      </form>
+      <section id="reminders-list"></section>
+      <form action="">
+        <input
+          type="text"
+          id="text-input"
+          placeholder="Enter text here"
+          required
+        />
+        <select id="voice-select">
+          <option value="David">David</option>
+          <option value="Mary">Mary</option>
+        </select>
+        <button type="submit" id="speak-button">Speak</button>
+      </form>
     </main>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
