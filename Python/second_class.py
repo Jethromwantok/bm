@@ -1,3 +1,5 @@
+# import time
+
 """
 Python has 4 data collectors: List, set, tuple and dictionary
 List is a data collection that is ordered, changeable and allows duplicates.
@@ -87,3 +89,88 @@ people = ["Ike", "Ibe", "Lawal", "Yahaya", "Ola", "Jide"]
 print(people[-5: -1])
 print(people[2:])
 print(people[:-2])
+
+# Updating a list
+print(people[0])
+people[0] = 'Jagaban'
+print(people[0:3])
+
+people[0:4] = "Suliyat", "Jehu", "Kayode", "Lolade", "Hulda", "Livinus"
+print(people)
+
+"""
+
+
+# extend(), insert(), append()
+extends adds two arrays together
+append adds to the tail end of an array
+insert: adds item at a particular index
+"""
+
+places = ["Germany", "Europe", "Yucatan"]
+print(people)
+people.extend(places)
+print(people)
+people.insert(2, "Ginnny")
+print(people)
+print(people)
+
+# """
+# Removing from a list:
+# remove() removes the called item
+# """
+# people.remove("Ginny")
+# """
+# people.clear() cleares everything
+# """
+# people.clear()
+# """
+# del people deletes people as a variable
+# """
+# del people
+# print(people)
+# pop() works like remove, when called with specified index, but removes end when no index is specified
+people.pop()
+
+print(people)
+print(len(people))
+"""LOOP A loop is a block of code that runs as long as a condition is true. Loop is usually used to print out the 
+elements of arrays or any other iterable or collection. Python has different kinds of loops; the for loop, 
+loop comprehension, while loop etc. THE python for loop comes a plug and play. The python while loop gives the 
+developer the latitude to initialize, test conditions, and increment/decrement as the case may be
+
+
+"""
+# Python FOR loop
+for i in people:
+    print(i)
+
+arr = ["Maths", "Physics", "Chemistry", "Biology", "Geography"]
+i = 0
+
+while i < len(arr):
+    print(arr[i])
+    i += 1
+
+j = len(arr)-1
+while j >= 0:
+    print(arr[j])
+    j -= 1
+
+firstNames = "Jeremiah Wanton"
+firstName = "Matthew"
+
+print(len(firstName))
+
+k = 0
+while k < len(firstName):
+    print(firstName[k])
+    k += 1
+
+for l in firstNames:
+    print (l)
+
+"""
+Loop Matthew into another variable
+"""
+
