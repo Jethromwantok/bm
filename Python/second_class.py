@@ -170,7 +170,4 @@ while k < len(firstName):
 for l in firstNames:
     print (l)
 
-"""
-Loop Matthew into another variable
-"""
 
