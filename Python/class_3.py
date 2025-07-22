@@ -75,13 +75,12 @@ while i < len(himmy):
     print(himmy[i])
     i += 1
 
-(a, *c ,b, f,) = (
+(a, *c, b, f,) = (
     "Me", "You", "Us", "Them", "We", "Stew", "Horse")  # the asterisk collects all unassigned values
 
 print(a)
 print(f)
 print(b)
-
 
 """
 1. Run a loop on
@@ -93,3 +92,31 @@ change the Python to marrow
 4. If y  = ['Apple', ['Banana'.'Orange'],'Cherry']
 change the 'Banana' to 'kiwi'
 """
+
+s = 'laptop'
+t = ""
+i = len(s) - 1
+while i >= 0:
+    t += s[i]
+    i -= 1
+
+print(t)
+
+too = ("Biz", "Python", "Tech")
+
+two = list(too)
+two[1] = "marrow"
+print(two)
+
+too = tuple(two)
+print(too)
+
+j = 0
+for j in too:
+    print(j)
+
+y = ['Apple', ['Banana', 'Orange'], 'Cherry']
+y[1][0] = "Kiwi"
+
+for ki in y:
+    print(ki)
