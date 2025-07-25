@@ -85,3 +85,19 @@ for x, y in parent.items():
     for i, j in y.items():
         print(f"{i}:  {j}")
 
+biz = {
+    "pathfield": {
+        "location": 'gwarimpa gate'
+    },
+    "anafara": {
+        "location": "By MIB plaza"
+    },
+    "Central area": {
+        "location": "Central area"
+    },
+}
+
+for c in biz:
+    # print (biz[c])
+    for g in biz[c]:
+        print(f"{g} : {biz[c][g]}")
