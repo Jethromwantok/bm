@@ -78,9 +78,10 @@ while i < len(himmy):
 (a, *c, b, f,) = (
     "Me", "You", "Us", "Them", "We", "Stew", "Horse")  # the asterisk collects all unassigned values
 
-print(a)
+# print(a)
 print(f)
 print(b)
+print(c)
 
 """
 1. Run a loop on
