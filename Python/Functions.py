@@ -128,13 +128,21 @@ print(quadractic(1,-5,-14))
     mylist = [[1,2,3],[4,5,6],[7,8,9]]
 """
 
-mylist = [[1,2,3],[4,5,6],[7,8,9]]
-sum = 0
-for i in mylist:
-    for j in i:
-        sum += j
+def lists(mylist):
+    sum = 0
+    for i in mylist:
+        for j in i:
+            sum += j
+    print(sum)
 
-print(sum)
+
+lists([[1,2,3],[4,5,6],[7,8,9]])
+# sum = 0
+# for i in mylist:
+#     for j in i:
+#         sum += j
+
+
     
 
 def areaOfTrapezium(a,b,h):
@@ -150,3 +158,70 @@ def didi(**persons):
 
 
 didi(name= 'John Doe', email = 'Johndoe@outlook.com', age = 29, favcolor = 'red')
+
+"""
+1. write a python function that can sum this list values
+thislist = [2,3,4,5,6]
+2. sum the following list using a python function
+li = [[4,5],[6,7],[8,9]]
+3. loop through the following
+friend = {
+    "Lisa":{
+    "name": "Lisa Doe",
+    "email": "Lisadoe@gmail.com",
+    "age":30}}
+    "Vera":{
+    "name": "Vera Doe",
+    "email": "Veradoe@gmail.com",
+    "age":20}}
+    "Linda":{
+    "name": "Linda Doe",
+    "email": "Lindadoe@gmail.com",
+    "age":23}
+    }
+
+
+
+
+"""
+
+
+thisList = [2,3,4,5,6]
+def sumList(arr):
+    sum = 0
+    for i in arr:
+        sum += i
+    print(sum)
+
+sumList(thisList)
+
+li = [[4,5],[6,7],[8,9]]
+def sumNestList(arr):
+    sum = 0
+    for i in arr:
+        for j in i:
+            sum += j
+    print(sum)
+
+sumNestList(li)
+
+
+friend = {
+    "Lisa":{
+        "name": "Lisa Doe",
+        "email": "Lisadoe@gmail.com",
+        "age":30},
+    "Vera":{
+        "name": "Vera Doe",
+        "email": "Veradoe@gmail.com",
+        "age":20},
+    "Linda":{
+        "name": "Linda Doe",
+        "email": "Lindadoe@gmail.com",
+        "age":23}
+    }
+
+for i in friend:
+    print(i)
+    for j in friend[i]:
+        print(f"{j} : {friend[i][j]}")
