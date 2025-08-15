@@ -68,15 +68,16 @@ dog = Animal("Dog", "Four legs", "White")
 
 print(lion.sound("Roar"))
 
+
 class Person:
-    def __init__(self, name,email, age ):
+    def __init__(self, name, email, age):
         self.name = name
         self.email = email
         self.age = age
 
     def __str__(self):
         return f"Name:{self.name}, Age: {self.age}"
-    
+
     def details(self):
         return f"My name is {self.name}, My email is {self.email}, I am {self.age} years Old"
 
@@ -85,14 +86,15 @@ class Student(Person):
     def __init__(self, name, email, age, score):
         self.score = score
         # super().__init__(name, email,age) # at this point, student class inherits from Person class
-        Person .__init__(self, name, email, age)
+        Person.__init__(self, name, email, age)
 
 
-stud1 = Student("Michael Douglas", "Michaeldouglas@gmail.com", 18, 79 )
+stud1 = Student("Michael Douglas", "Michaeldouglas@gmail.com", 18, 79)
 print(stud1.details())
 
+
 class Account:
-    def __init__(self, name, balance = 0):
+    def __init__(self, name, balance=0):
         self.name = name
         self.balance = balance
 
@@ -104,7 +106,7 @@ class Account:
         return f"${amount} Deposited successfully"
 
     def withdraw(self, amount):
-        if self.balance < amount :
+        if self.balance < amount:
             return "Insufficient Funds"
         else:
             self.balance -= amount
@@ -133,4 +135,72 @@ Detail
     show everything about the product    
 
 
+"""
+
+
+class Product:
+    def __init__(self, productName, price, productQuantity):
+        self.productName = productName
+        self.price = price
+        self.productQuantity = productQuantity
+
+    def buyProduct(self, quantity):
+        if quantity < self.productQuantity:
+            print(f"We only have {self.productQuantity} products left")
+        else:
+            print(f"Total price is NGN{self.price * quantity}")
+
+    def displayDetails(self):
+        print(f"Product: {self.productName}")
+        print(f"Price: {self.price}")
+        print(f"Quantity Left: {self.productQuantity}")
+
+
+"""
+Encapsulation talks about how properties of a class should be managed i.e updated or accessed.
+There are three ways of accessing class properties
+1. Public: This means that properties could be accessed by anyone or any program
+2. Protected: Here, the class properties could be accessed by child classes. We use single Underscore(_)
+3. Private: Here, class properties could only be managed by getters and setters. Here, we use double underscore(__)
+
+"""
+
+class Vehicle:
+    def __init__(self, name, year, color, engine):
+        self.engine = engine
+        self._name = name # Single Underscore
+        self.__year = year # Double Underscore
+        self.__color = color
+
+
+    def __str__(self):
+        return self.name
+
+    def getYear(self):
+        return self.__year
+    def getColor(self):
+        return self.__color
+    def setColor(self, val):
+        self.__color = val
+    def setYear(self, val):
+        self.__year = val
+
+honda = Vehicle("Honda Accord", 2023, "red", "V8")
+honda.engine = "V8"
+print(honda.engine)
+honda.setYear(2024)
+print(honda.getYear())
+print(honda.getColor())
+
+class Car(Vehicle):
+    def __init__(self, name, year, color, engine):
+        super().__init__(name, year, color, engine)
+ 
+
+    
+kia = Car("Kia", 2023, "blue", "V6")
+print(kia._name)
+
+"""
+Polymorphism is the ability of different classes to appear in different forms when being called on different child classes
 """
