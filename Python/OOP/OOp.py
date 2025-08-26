@@ -1,4 +1,5 @@
 import tkinter as tk
+from abc import ABC, abstractmethod
 
 """
 OOP means object-oriented programming. It is a kind of programming where we use classes to make definitions for
@@ -202,5 +203,7 @@ kia = Car("Kia", 2023, "blue", "V6")
 print(kia._name)
 
 """
-Polymorphism is the ability of different classes to appear in different forms when being called on different child classes
+Polymorphism is the ability of different classes to appear in different forms when being called on different child classes.
+
+Abstraction: 
 """
