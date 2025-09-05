@@ -33,8 +33,8 @@ try:
 except:
     print("Table 'Customers' already exists")
 
-#Inserting data into users table
-sql = "INSERT INTO customers (name, email) VALUES (%s, %s)"
-val = ("John Doe","johndoe@gmail.com")
-mycursor.execute(sql, val)
-mydb.commit()
+# #Inserting data into users table
+# sql = "INSERT INTO customers (name, email) VALUES (%s, %s)"
+# val = ("John Doe","johndoe@gmail.com")
+# mycursor.execute(sql, val)
+# mydb.commit()
