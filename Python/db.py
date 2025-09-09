@@ -7,9 +7,9 @@ mydb = mysql.connector.connect(
     database="biz"
 )
 print(mydb)
-#initializing cursor
+# initializing cursor
 mycursor = mydb.cursor()
-#Create database
+# Create database
 try:
     sql = "CREATE DATABASE biz"
     mycursor.execute(sql)
@@ -19,14 +19,14 @@ except:
 for i in mycursor:
     print(i)
 
-#Creating table in Database
+# Creating table in Database
 try:
     sql = "CREATE TABLE users (name VARCHAR(255), email VARCHAR(255), password VARCHAR(255))"
     mycursor.execute(sql)
 except:
     print("Table already exists")
 
-#Creating customers table with ID
+# Creating customers table with ID
 try:
     sql = "CREATE TABLE customers (id Int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255))"
     mycursor.execute(sql)
