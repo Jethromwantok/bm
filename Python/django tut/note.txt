@@ -1,0 +1,41 @@
+python -m venv myvenv
+
+django-admin startproject myproject
+myvenv/Scripts/activate
+cd myproject
+python manage.py runserver
+
+A django app is a page in the site
+
+MVT - Core Building blocks
+M-MODEL
+V-VIEW
+T-TEMPLATE
+
+Python functions to organise display
+HttpResponse: Raw server response
+
+include is used to add app url to 
+
+python manage.py startapp home //To start new app
+
+django-admin startproject myproject
+
+from django.urls import path
+from .views import home_view
+
+urlpatterns = [
+    path('', home_view, name="home"),
+] : In the app's folder
+
+always register apps in settings
+
+
+
+
+# Create your views here.
+# Python views are functions that we use to organize the
+# Content of a webpage
+# Types - Two: Function views and classes based views
+
+urlpatterns: 'Aboutus(the url path)', Aboutus_view(What to show), name='About'

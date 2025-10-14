@@ -26,4 +26,14 @@ from .views import home_view
 
 urlpatterns = [
     path('', home_view, name="home"),
-] :Inthe app's folder
+] : In the app's folder
+
+always register apps in settings
+
+
+
+
+# Create your views here.
+# Python views are functions that we use to organize the
+# Content of a webpage
+# Types - Two: Function views and classes based views
