@@ -1,0 +1,16 @@
+python -m venv myvenv
+
+django-admin startproject myproject
+myvenv/Scripts/activate
+cd myproject
+python manage.py runserver
+
+A django app is a page in the site
+
+MVT - Core Building blocks
+M-MODEL
+V-VIEW
+T-TEMPLATE
+
+Python functions to organise display
+HttpResponse: Raw server response
