@@ -14,3 +14,16 @@ T-TEMPLATE
 
 Python functions to organise display
 HttpResponse: Raw server response
+
+include is used to add app url to 
+
+python manage.py startapp home //To start new app
+
+django-admin startproject myproject
+
+from django.urls import path
+from .views import home_view
+
+urlpatterns = [
+    path('', home_view, name="home"),
+] :Inthe app's folder
