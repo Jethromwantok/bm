@@ -39,3 +39,9 @@ always register apps in settings
 # Types - Two: Function views and classes based views
 
 urlpatterns: 'Aboutus(the url path)', Aboutus_view(What to show), name='About'
+
+Templates in Django are simply HTML FILES which include python like logic
+Templated seperate logic from design
+
+create a template file in each app
+and in template folder, create a directory called the app name
