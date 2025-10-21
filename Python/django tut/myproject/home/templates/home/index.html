@@ -1,8 +1,13 @@
+{% load static %} <!--To load static files in django templates and enable them in this template-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'home/css/homestyle.css' %}"> <!--Linking the static css file, telling path-->
     <title>My Django Homepage</title>
 </head>
 <body>
@@ -10,5 +15,14 @@
     <h1>Welcome to my Django website</h1>
     <p>Please be patient, This site is under construction</p>
     <p>This page is rendered from a template</p>
+    <img src="{% static 'home/images/img.png' %}" alt="img">
+    <br>
+    <br>
+    <button class="btn bg-success" id = "cta-btn">Get Started</button>
+
+
+    <script src="{% static 'home/js/homescript.js' %}"></script>
 </body>
 </html>
+
+<!--Style header with css having a logo and hyperlinks to the four pages-->
